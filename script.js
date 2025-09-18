@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const downloadSvgButton = document.getElementById('downloadSvgButton');
     const downloadPngButton = document.getElementById('downloadPngButton');
 
-    // --- Sabitler ve Ayarlar ---
     const LINE_GAP = 10;
     const STAFF_GAP = 70;
     const STAFF_TOP_Y = 50;
@@ -19,8 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const notePitchesBass = { 'E': 10, 'F': 5, 'G': 0, 'A': -5, 'B': -10, 'C': -15, 'D': -20 };
     const OCTAVE_HEIGHT = 35;
 
-    // --- YENİ EKLENEN KOD BAŞLANGICI ---
-    // SVG içine gömülecek olan stil kuralları. Bu, dosyanın taşınabilir olmasını sağlar.
     const svgStyles = `
         .staff-line { stroke: black; stroke-width: 1; }
         .measure-line { stroke: black; stroke-width: 1.5; }
@@ -30,13 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
         .ledger-line { stroke: black; stroke-width: 1; }
         .clef-text, .accidental-text, .rest-text, text {
             font-family: 'Bravura', serif;
-            fill: black; /* Tüm metin tabanlı sembollerin siyah olmasını garantiler */
+            fill: black;
         }
         .clef-text { font-size: 50px; }
         .accidental-text { font-size: 20px; }
         .rest-text { font-size: 30px; }
     `;
-    // --- YENİ EKLENEN KOD SONU ---
 
     renderButton.addEventListener('click', () => {
         const inputText = noteInput.value.trim();
@@ -44,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function parseInput(text) {
-        // Bu fonksiyonda değişiklik yok, önceki haliyle aynı kalabilir.
         const measures = text.split(/\n\s*\n/);
         const parsedMeasures = [];
         const noteRegex = /(?<note>\(sus\)|[A-G])(?<accidental>[♭♮♯b#]?)(?<octave>\d)?-(?<dotted>d-)?(?<duration>[whqie])/;
@@ -94,14 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
             style: "background-color: #fff;" 
         });
 
-        // --- GÜNCELLENMİŞ KOD BAŞLANGICI ---
-        // Stilleri SVG'nin içine <defs> ve <style> etiketleri ile ekliyoruz
         const styleElement = document.createElementNS('http://www.w3.org/2000/svg', 'style');
         styleElement.textContent = svgStyles;
         const defsElement = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
         defsElement.appendChild(styleElement);
         svg.appendChild(defsElement);
-        // --- GÜNCELLENMİŞ KOD SONU ---
 
         drawGrandStaff(svg, svgWidth);
 
@@ -116,8 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
         downloadPngButton.disabled = false;
     }
 
-    // Geri kalan tüm fonksiyonlar (drawGrandStaff, drawMeasure, drawNote, drawRest, createSvgElement, indirme fonksiyonları)
-    // HİÇBİR DEĞİŞİKLİK GEREKTİRMEZ. Önceki kodunuzdaki gibi kalabilirler.
 
     function drawGrandStaff(svg, width) {
         for (let i = 0; i < 5; i++) {

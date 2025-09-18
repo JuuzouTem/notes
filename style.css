@@ -84,10 +84,8 @@ button:disabled {
     width: 100%;
     overflow-x: auto;
     padding-bottom: 10px;
-    background-color: #fff; /* İndirilen PNG'nin arka planı için */
+    background-color: #fff;
 }
-
-/* SVG stilleri */
 .staff-line { stroke: #000; stroke-width: 1; }
 .measure-line { stroke: #000; stroke-width: 1.5; }
 .note-head { stroke: #000; stroke-width: 1.5; }
