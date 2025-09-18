@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metinden Nota Yazıcı</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gelişmiş Metinden Nota Yazıcı</h1>
+        <p class="instructions">
+            Piyano bestesi formatındaki metni aşağıya yapıştırın. <br>
+            Her ölçü için iki satır girin (üst satır sağ el, alt satır sol el). Ölçüleri boş bir satırla ayırın.<br>
+            <b>Format:</b> <code>Nota[♭|♮|♯]Oktav-[d-]süre</code> (Örnek: <code>G4-h, E♭4-q</code>)<br>
+            <b>Süreler:</b> <code>w</code> (birlik), <code>h</code> (ikilik), <code>q</code> (dörtlük), <code>e</code> (sekizlik), <code>i</code> (sekizlik-alternatif)<br>
+            <b>Noktalı:</b> <code>-d-h</code> (noktalı ikilik) | <b>Es:</b> <code>(sus)-q</code>
+        </p>
+        <textarea id="noteInput" rows="15" placeholder="Bestenizi buraya yapıştırın..."></textarea>
+        
+        <div class="button-group">
+            <button id="renderButton">Besteyi Çiz</button>
+            <button id="downloadSvgButton" disabled>SVG Olarak İndir</button>
+            <button id="downloadPngButton" disabled>PNG Olarak İndir</button>
+        </div>
+        
+        <div id="staffContainer">
+            <!-- Nota kağıdı (porte) buraya eklenecek -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

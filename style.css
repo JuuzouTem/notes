@@ -1,0 +1,99 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.instructions {
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.instructions code {
+    background-color: #e8e8e8;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Düğmeler arası boşluk */
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+#staffContainer {
+    margin-top: 30px;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    background-color: #fff; /* İndirilen PNG'nin arka planı için */
+}
+
+/* SVG stilleri */
+.staff-line { stroke: #000; stroke-width: 1; }
+.measure-line { stroke: #000; stroke-width: 1.5; }
+.note-head { stroke: #000; stroke-width: 1.5; }
+.note-stem { stroke: #000; stroke-width: 1.5; }
+.note-flag { fill: #000; }
+.ledger-line { stroke: #000; stroke-width: 1; }
+.clef-text { font-size: 50px; font-family: 'Bravura', serif; }
+.accidental-text { font-size: 20px; }
+.rest-text { font-size: 30px; font-family: 'Bravura', serif; }
